@@ -2,6 +2,9 @@
 import os
 import csv
 
+counter = 0
+nettotal = 0
+
 path = "budget_data.csv"
 
 with open(path, newline="") as csvfile:
@@ -11,14 +14,14 @@ with open(path, newline="") as csvfile:
     csv_header = next(csvfile)
     print(csv_header)
 
-for row in csvreader:
-    print(f"{row[0]} and {row[1 - 1]}")
-
-# 1)Calculate number of months (rows except header)
-for x in range(1, 100):
-    print(x)
+    for row in csvreader:
+        print(row)
+        nettotal = nettotal + int(row[1])
+        counter = counter + 1
 
 
+print(nettotal)
+print(counter)
      
 
 
